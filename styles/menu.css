@@ -1,3 +1,7 @@
+.home {
+    display: none;
+}
+
 .menu-button {
     font-family: 'Nerko One';
 }
@@ -16,4 +20,26 @@
 
 .music-btn {
     color: #F76079;
+}
+
+.game-board-container {
+    position: absolute;
+    top: 10%;
+    bottom: 5%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-board {
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+}
+
+.card img {
+    position: absolute;
+    border-radius: 10%;
+    height: 200px;
+    width: 200px;
 }

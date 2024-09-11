@@ -2,4 +2,5 @@ body {
     background-image: url('../assets/img/shikanoko-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
