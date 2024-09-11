@@ -1,9 +1,19 @@
-.menu-buttons {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 10%;
-    top: 50%;
-    right: 50%;
-    left: 60%;
+.menu-button {
+    font-family: 'Nerko One';
+}
+
+.start-btn {
+    color: #A4C82A;
+}
+
+.settings-btn {
+    color: #F9B901;
+}
+
+.sound-btn {
+    color: #8079D1;
+}
+
+.music-btn {
+    color: #F76079;
 }
