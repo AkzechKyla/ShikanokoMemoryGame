@@ -18,11 +18,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="menu-buttons flex flex-col absolute w-96 top-[40%] right-1/2 left-[55%] gap-10">
-            <button class="menu-button start-btn text-5xl">Start</button>
-            <button class="menu-button settings-btn text-5xl">Settings</button>
-            <button class="menu-button sound-btn text-5xl">Sound On</button>
-            <button class="menu-button music-btn text-5xl">Music On</button>
+        <div class="home">
+            <div class="menu-buttons flex flex-col absolute w-96 top-[40%] right-1/2 left-[55%] gap-10">
+                <button class="menu-button start-btn text-5xl" onclick="startGame()">Start</button>
+                <button class="menu-button settings-btn text-5xl">Settings</button>
+                <button class="menu-button sound-btn text-5xl">Sound On</button>
+                <button class="menu-button music-btn text-5xl">Music On</button>
+            </div>
         </div>
+
+        <script src="scripts/main.js" type="module"></script>
     </body>
 </html>
