@@ -24,9 +24,8 @@
 
 .game-board-container {
     position: absolute;
-    top: 10%;
-    bottom: 5%;
-    right: 5%;
+    top: 80px;
+    right: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
