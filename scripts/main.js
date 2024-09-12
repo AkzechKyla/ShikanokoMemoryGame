@@ -1,6 +1,8 @@
+import {ScenesManager} from './scenesManager.js';
+
 function startGame() {
-    const homeScreen = document.querySelector('.home');
-    homeScreen.style.display = 'none';
+    const gameScenes = new ScenesManager(['main-menu', 'game']);
+    gameScenes.switchScene('game');
 }
 
 async function main() {

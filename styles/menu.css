@@ -22,13 +22,14 @@
     color: #F76079;
 }
 
-.game-board-container {
+.game {
     position: absolute;
     top: 80px;
     right: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .game-board {
