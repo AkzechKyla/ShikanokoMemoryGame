@@ -3,19 +3,24 @@ export class GameBoard {
 
     constructor(cards) {
         this.cards = cards;
-
-        for (const card of this.cards) {
-            this.cardsURL.push(card.url);
-        }
     }
 
     render() {
         let html = '';
 
-        for (const url of this.cardsURL) {
-            html += `<div class="card">${url}</div>`;
+        for (const card of this.cards) {
+            this.cardsURL.push(card.url);
         }
 
+        this.cardsURL.forEach((url, i) => {
+            html += `<div class="card" data-id="${i}">${url}</div>`;
+        });
+
         return html;
+    }
+
+    shuffleCards() {
+        const shuffledCards = this.cards.sort(() => Math.random() - 0.5);
+        this.cards = shuffledCards;
     }
 }
