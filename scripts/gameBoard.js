@@ -7,7 +7,7 @@ export class GameBoard {
         let html = '';
 
         this.cards.forEach((card) => {
-            html += `<div class="card" data-id="${card.id}">${card.url}</div>`;
+            html += `<div class="card" data-id="${card.id}">${card.cardBack}</div>`;
         });
 
         return html;
