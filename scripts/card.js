@@ -1,17 +1,21 @@
 export class Card {
     constructor(cardDetails) {
         this.id = cardDetails.id;
-        this.value = cardDetails.imageURL;
+        this.imageURL = cardDetails.imageURL;
         this.cardBack = cardDetails.cardBack;
         this.isFlipped = false;
     }
 
     getCard(id) {
         if (this.id === id) {
-            return this.card;
+            return this;
         }
 
         return null;
+    }
+
+    flip() {
+        this.isFlipped = !this.isFlipped;
     }
 }
 

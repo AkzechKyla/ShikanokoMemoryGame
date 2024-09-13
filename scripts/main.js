@@ -1,6 +1,6 @@
 import {ScenesManager} from './scenesManager.js';
 import {GameBoard} from './gameBoard.js';
-import {Card, cards} from './card.js';
+import {cards} from './card.js';
 
 function startGame() {
     const gameScenes = new ScenesManager(['main-menu', 'game']);
@@ -9,18 +9,21 @@ function startGame() {
     const gameBoard = new GameBoard(cards);
     gameBoard.shuffleCards();
     document.querySelector('.game-board').innerHTML = gameBoard.render();
+}
 
-    document.querySelectorAll('.card').forEach((card) => {
-        card.addEventListener('click', () => {
-            console.log('clicked');
-            const {id} = card.dataset;
-            console.log(id);
-        });
-    });
+function flipCard(cardElement) {
+    const {id} = cardElement.dataset;
+    const selectedCard = cards.find(card => card.id === id);
+
+    if (selectedCard.id === id) {
+        selectedCard.flip();
+        console.log(selectedCard);
+    }
 }
 
 async function main() {
     window.startGame = startGame;
+    window.flipCard = flipCard;
 }
 
 main();
