@@ -1,13 +1,19 @@
 export class GameBoard {
-    getString() {
-        return 'this works';
+    cardsURL = [];
+
+    constructor(cards) {
+        this.cards = cards;
+
+        for (const card of this.cards) {
+            this.cardsURL.push(card.url);
+        }
     }
 
-    render(cards) {
+    render() {
         let html = '';
 
-        for (const card of cards) {
-            html += card;
+        for (const url of this.cardsURL) {
+            html += `<div class="card">${url}</div>`;
         }
 
         return html;
