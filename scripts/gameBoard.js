@@ -1,6 +1,4 @@
 export class GameBoard {
-    cardsURL = [];
-
     constructor(cards) {
         this.cards = cards;
     }
@@ -8,12 +6,8 @@ export class GameBoard {
     render() {
         let html = '';
 
-        for (const card of this.cards) {
-            this.cardsURL.push(card.url);
-        }
-
-        this.cardsURL.forEach((url, i) => {
-            html += `<div class="card" data-id="${i}">${url}</div>`;
+        this.cards.forEach((card) => {
+            html += `<div class="card" data-id="${card.id}">${card.url}</div>`;
         });
 
         return html;
