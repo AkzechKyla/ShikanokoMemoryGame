@@ -1,16 +1,15 @@
 export class GameBoard {
     constructor(cards) {
         this.cards = cards;
+        this.shuffleCards();
     }
 
     render() {
-        let html = '';
+        const board = document.querySelector('.game-board');
 
-        this.cards.forEach((card) => {
-            html += `<div class="card" data-id="${card.id}" onclick="flipCard(this)">${card.cardBack}</div>`;
-        });
-
-        return html;
+        for (const card of this.cards) {
+            board.appendChild(card.render());
+        }
     }
 
     shuffleCards() {
