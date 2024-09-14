@@ -33,6 +33,7 @@ export class Card {
     render() {
         const div = document.createElement('div');
         div.classList.add('card');
+        div.dataset.id = this.id;
         div.addEventListener('click', () => {
             this.flip();
             div.innerHTML = this.getHTML();
