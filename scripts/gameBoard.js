@@ -13,7 +13,10 @@ export class GameBoard {
     }
 
     shuffleCards() {
-        const shuffledCards = this.cards.sort(() => Math.random() - 0.5);
-        this.cards = shuffledCards;
+        this.cards = this.cards.sort(() => Math.random() - 0.5);
+    }
+
+    getCardById(cardId) {
+        return this.cards.find(card => card.id === cardId) || null;
     }
 }
