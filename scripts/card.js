@@ -4,6 +4,7 @@ export class Card {
         this.imageURL = cardDetails.imageURL;
         this.cardBack = cardDetails.cardBack;
         this.isFlipped = false;
+        this.isMatched = false;
     }
 
     getCard(id) {
@@ -16,6 +17,10 @@ export class Card {
 
     flip() {
         this.isFlipped = !this.isFlipped;
+    }
+
+    match() {
+        this.isMatched = !this.isMatched;
     }
 
     getHTML() {
@@ -31,15 +36,15 @@ export class Card {
     }
 
     render() {
-        const div = document.createElement('div');
-        div.classList.add('card');
-        div.dataset.id = this.id;
-        div.addEventListener('click', () => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card');
+        cardElement.dataset.id = this.id;
+        cardElement.addEventListener('click', () => {
             this.flip();
-            div.innerHTML = this.getHTML();
+            cardElement.innerHTML = this.getHTML();
         });
-        div.innerHTML = this.getHTML();
-        return div;
+        cardElement.innerHTML = this.getHTML();
+        return cardElement;
     }
 }
 
