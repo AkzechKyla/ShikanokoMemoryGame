@@ -17,6 +17,29 @@ export class Card {
     flip() {
         this.isFlipped = !this.isFlipped;
     }
+
+    getHTML() {
+        let html = '';
+
+        if (this.isFlipped) {
+            html = this.imageURL;
+        } else {
+            html = this.cardBack;
+        }
+
+        return html;
+    }
+
+    render() {
+        const div = document.createElement('div');
+        div.classList.add('card');
+        div.addEventListener('click', () => {
+            this.flip();
+            div.innerHTML = this.getHTML();
+        });
+        div.innerHTML = this.getHTML();
+        return div;
+    }
 }
 
 export const cards = [{
