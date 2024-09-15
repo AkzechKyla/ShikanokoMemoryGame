@@ -10,7 +10,7 @@ export class GameBoard {
 
         for (const card of this.cards) {
             const cardElement = card.render();
-            cardElement.addEventListener('click', (event) => this.selectCard(event));
+            cardElement.addEventListener('click', () => this.selectCard(card));
             board.appendChild(cardElement);
         }
     }
@@ -19,31 +19,30 @@ export class GameBoard {
         this.cards = this.cards.sort(() => Math.random() - 0.5);
     }
 
-    getCardById(cardId) {
-        return this.cards.find(card => card.id === cardId) || null;
-    }
-
-    selectCard(event) {
-        const id = event.target.dataset.id;
-        const selectedCard = this.getCardById(id);
-
-        if (selectedCard) {
-            this.selectedCards.push(selectedCard)
-        }
+    selectCard(card) {
+        this.selectedCards.push(card);
 
         if (this.selectedCards.length === 2) {
-            this.checkForMatch();
+            const [card1, card2] = this.selectedCards;
+
+            if (card1.imageURL === card2.imageURL) {
+                card1.match(card2);
+                card2.match(card1);
+            } else {
+                card1.flip();
+                card2.flip();
+                this.renderCardsDelayed([card1, card2]);
+            }
+
+            this.selectedCards = [];
         }
     }
 
-    checkForMatch() {
-        const [card1, card2] = this.selectedCards;
-        if (card1.imageURL === card2.imageURL) {
-            card1.match();
-            card2.match();
-        }
-
-        console.log(card1);
-        console.log(card2);
+    renderCardsDelayed(cards) {
+        setTimeout(() => {
+            for (const card of cards) {
+                card.render();
+            }
+        }, 500);
     }
 }
