@@ -4,7 +4,7 @@ export class Card {
         this.imageURL = cardDetails.imageURL;
         this.cardBack = cardDetails.cardBack;
         this.isFlipped = false;
-        this.isMatched = false;
+        this.matchedWith = null;
     }
 
     getCard(id) {
@@ -19,8 +19,8 @@ export class Card {
         this.isFlipped = !this.isFlipped;
     }
 
-    match() {
-        this.isMatched = !this.isMatched;
+    match(card) {
+        this.matchedWith = card;
     }
 
     getHTML() {
