@@ -29,7 +29,10 @@ export class Card {
         if (this.isFlipped) {
             html = this.imageURL;
         } else {
-            html = this.cardBack;
+            html = `<img
+                src="https://media1.tenor.com/m/gu5VNpOajbUAAAAC/deer-light.gif"
+                class="object-cover"
+            />`;
         }
 
         return html;
