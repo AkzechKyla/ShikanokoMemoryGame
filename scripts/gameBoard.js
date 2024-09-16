@@ -25,7 +25,7 @@ export class GameBoard {
         if (this.selectedCards.length === 2) {
             const [card1, card2] = this.selectedCards;
 
-            if (card1.imageURL === card2.imageURL) {
+            if (card1.imageURL === card2.imageURL && card1 !== card2) {
                 card1.match(card2);
                 card2.match(card1);
             } else {
