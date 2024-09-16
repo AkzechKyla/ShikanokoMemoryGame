@@ -20,7 +20,9 @@ export class GameBoard {
     }
 
     selectCard(card) {
-        this.selectedCards.push(card);
+        if (card.matchedWith === null) {
+            this.selectedCards.push(card);
+        }
 
         if (this.selectedCards.length === 2) {
             const [card1, card2] = this.selectedCards;
