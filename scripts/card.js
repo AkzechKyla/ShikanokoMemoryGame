@@ -23,7 +23,9 @@ export class Card {
     }
 
     flip() {
-        this.isFlipped = !this.isFlipped;
+        if (this.matchedWith === null) {
+            this.isFlipped = !this.isFlipped;
+        }
     }
 
     match(card) {
