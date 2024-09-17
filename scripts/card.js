@@ -1,8 +1,8 @@
 export class Card {
-    constructor(cardDetails) {
+    constructor(imageURL) {
         this.id = "id" + Math.random().toString(16).slice(2);
-        this.imageURL = cardDetails.imageURL;
-        this.cardBack = cardDetails.cardBack;
+        this.imageURL = imageURL;
+        this.cardBack = 'https://media1.tenor.com/m/gu5VNpOajbUAAAAC/deer-light.gif';
         this.isFlipped = false;
         this.matchedWith = null;
 
@@ -42,7 +42,7 @@ export class Card {
             />`;
         } else {
             html = `<img
-                src="https://media1.tenor.com/m/gu5VNpOajbUAAAAC/deer-light.gif"
+                src="${this.cardBack}"
                 class="object-cover"
             />`;
         }
