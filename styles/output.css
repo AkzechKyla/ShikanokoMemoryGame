@@ -684,6 +684,10 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .w-80 {
   width: 20rem;
 }
@@ -812,6 +816,18 @@ video {
 .bg-yellow-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(113 63 18 / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\'\.\.\/assets\/img\/shikanoko-bg\.png\'\)\] {
+  background-image: url('../assets/img/shikanoko-bg.png');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .object-cover {
