@@ -36,7 +36,10 @@ export class Card {
         let html = '';
 
         if (this.isFlipped) {
-            html = this.imageURL;
+            html = `<img
+                src="${this.imageURL}"
+                class="object-cover"
+            />`;
         } else {
             html = `<img
                 src="https://media1.tenor.com/m/gu5VNpOajbUAAAAC/deer-light.gif"
@@ -54,41 +57,29 @@ export class Card {
 }
 
 export const cards = [{
-    imageURL: 'CARD 1',
-    cardBack: 'CARDBACK 1',
+    imageURL: 'https://i.pinimg.com/736x/19/59/83/1959833460da93ea63ee9404b159624d.jpg',
 }, {
-    imageURL: 'CARD 2',
-    cardBack: 'CARDBACK 2',
+    imageURL: 'https://i.pinimg.com/736x/4e/ed/a3/4eeda30f3c116270f1505d8cb107b329.jpg',
 }, {
-    imageURL: 'CARD 3',
-    cardBack: 'CARDBACK 3',
+    imageURL: 'https://i.pinimg.com/736x/b6/84/11/b684114961804efe7790af4315a8f742.jpg',
 }, {
-    imageURL: 'CARD 4',
-    cardBack: 'CARDBACK 4',
+    imageURL: 'https://i.pinimg.com/736x/29/11/32/29113238141dfedeacd46c2fdf989989.jpg',
 }, {
-    imageURL: 'CARD 5',
-    cardBack: 'CARDBACK 5',
+    imageURL: 'https://i.pinimg.com/736x/4e/1a/8f/4e1a8f51e93ddfe3a16020d8551bc485.jpg',
 }, {
-    imageURL: 'CARD 6',
-    cardBack: 'CARDBACK 6',
+    imageURL: 'https://i.pinimg.com/736x/05/49/a4/0549a427a95edcb90a33d52b8a0ffb6f.jpg',
 }, {
-    imageURL: 'CARD 1',
-    cardBack: 'CARDBACK 1',
+    imageURL: 'https://i.pinimg.com/736x/19/59/83/1959833460da93ea63ee9404b159624d.jpg',
 }, {
-    imageURL: 'CARD 2',
-    cardBack: 'CARDBACK 2',
+    imageURL: 'https://i.pinimg.com/736x/4e/ed/a3/4eeda30f3c116270f1505d8cb107b329.jpg',
 }, {
-    imageURL: 'CARD 3',
-    cardBack: 'CARDBACK 3',
+    imageURL: 'https://i.pinimg.com/736x/b6/84/11/b684114961804efe7790af4315a8f742.jpg',
 }, {
-    imageURL: 'CARD 4',
-    cardBack: 'CARDBACK 4',
+    imageURL: 'https://i.pinimg.com/736x/29/11/32/29113238141dfedeacd46c2fdf989989.jpg',
 }, {
-    imageURL: 'CARD 5',
-    cardBack: 'CARDBACK 5',
+    imageURL: 'https://i.pinimg.com/736x/4e/1a/8f/4e1a8f51e93ddfe3a16020d8551bc485.jpg',
 }, {
-    imageURL: 'CARD 6',
-    cardBack: 'CARDBACK 6',
+    imageURL: 'https://i.pinimg.com/736x/05/49/a4/0549a427a95edcb90a33d52b8a0ffb6f.jpg',
 }].map((cardDetails) => {
     return new Card(cardDetails);
 });
