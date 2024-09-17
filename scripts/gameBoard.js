@@ -1,8 +1,9 @@
 export class GameBoard {
     constructor(cards) {
         this.cards = cards;
-        this.selectedCards = [];
         this.shuffleCards();
+        this.selectedCards = [];
+        this.moves = 0;
     }
 
     render() {
@@ -37,6 +38,8 @@ export class GameBoard {
             }
 
             this.selectedCards = [];
+            this.moves++;
+            console.log(this.moves);
         }
     }
 
