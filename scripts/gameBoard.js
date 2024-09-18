@@ -4,6 +4,7 @@ export class GameBoard {
         this.shuffleCards();
         this.selectedCards = [];
         this.moves = 0;
+        this.renderNumberOfMoves();
     }
 
     render() {
@@ -39,7 +40,7 @@ export class GameBoard {
 
             this.selectedCards = [];
             this.moves++;
-            console.log(this.moves);
+            this.renderNumberOfMoves();
         }
     }
 
@@ -49,5 +50,10 @@ export class GameBoard {
                 card.render();
             }
         }, 500);
+    }
+
+    renderNumberOfMoves() {
+        const div = document.querySelector('.moves');
+        div.innerHTML = `Number of moves: ${this.moves}`;
     }
 }
