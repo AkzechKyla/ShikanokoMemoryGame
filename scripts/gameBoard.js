@@ -2,9 +2,16 @@ export class GameBoard {
     constructor(cards) {
         this.cards = cards;
         this.shuffleCards();
+
+        this.matchedCards = 0;
+
         this.selectedCards = [];
         this.moves = 0;
         this.renderNumberOfMoves();
+
+        this.timer = new Timer();
+        this.timer.start();
+        this.renderTimer();
     }
 
     render() {
@@ -32,6 +39,7 @@ export class GameBoard {
             if (card1.imageURL === card2.imageURL && card1 !== card2) {
                 card1.match(card2);
                 card2.match(card1);
+                this.matchedCards++;
             } else {
                 card1.flip();
                 card2.flip();
@@ -41,6 +49,10 @@ export class GameBoard {
             this.selectedCards = [];
             this.moves++;
             this.renderNumberOfMoves();
+
+            if (this.matchedCards === (this.cards.length)/2) {
+                this.timer.stop();
+            }
         }
     }
 
@@ -55,5 +67,11 @@ export class GameBoard {
     renderNumberOfMoves() {
         const div = document.querySelector('.moves');
         div.innerHTML = `Number of moves: ${this.moves}`;
+    }
+
+    renderTimer() {
+        this.timer.addEventListener('secondsUpdated', () => {
+            $('.timer').html(`Timer: ${this.timer.getTimeValues().toString()}`);
+        });
     }
 }
