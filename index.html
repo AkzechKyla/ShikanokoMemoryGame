@@ -32,6 +32,32 @@
             <div class="game-board grid gap-1.5"></div>
         </div>
 
+        <div class="modal-container relative z-10 hidden">
+          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+          <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="flex flex-col items-center bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 rounded-lg">
+                  <div class="text-6xl text-[#A4C82A]">YOU WON!</div>
+                  <div class="flex flex-row my-3 text-[#82542A]">
+                    <div class="flex flex-col mr-10">
+                      <div class="text-4xl text-right">TOTAL MOVES:</div>
+                      <div class="text-4xl text-right">TOTAL TIME:</div>
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-4xl">69</div>
+                      <div class="text-4xl">00:00:69</div>
+                    </div>
+                  </div>
+                  <img class="my-3" src="https://media1.tenor.com/m/g7ntgWBQrBEAAAAC/shikanoko-shikanoko-nokonoko-koshitan.gif">
+                  <div class="text-4xl text-[#8079D1]">PLAY AGAIN</div>
+                  <div class="text-4xl text-[#F76079]">MAIN MENU</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
         <script src="scripts/main.js" type="module"></script>
