@@ -877,9 +877,57 @@ html {
   font-weight: 700;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-green-400 {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
+}
+
+.text-\[\#A4C82A\] {
+  --tw-text-opacity: 1;
+  color: rgb(164 200 42 / var(--tw-text-opacity));
+}
+
+.text-\[\#F9B901\] {
+  --tw-text-opacity: 1;
+  color: rgb(249 185 1 / var(--tw-text-opacity));
+}
+
+.text-\[\#8079D1\] {
+  --tw-text-opacity: 1;
+  color: rgb(128 121 209 / var(--tw-text-opacity));
+}
+
+.text-\[\#F76079\] {
+  --tw-text-opacity: 1;
+  color: rgb(247 96 121 / var(--tw-text-opacity));
 }
 
 .underline {

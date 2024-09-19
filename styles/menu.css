@@ -2,26 +2,6 @@
     display: auto;
 }
 
-.menu-button {
-    font-family: 'Nerko One';
-}
-
-.start-btn {
-    color: #A4C82A;
-}
-
-.settings-btn {
-    color: #F9B901;
-}
-
-.sound-btn {
-    color: #8079D1;
-}
-
-.music-btn {
-    color: #F76079;
-}
-
 .game {
     position: absolute;
     top: 10px;
