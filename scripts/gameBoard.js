@@ -49,11 +49,16 @@ export class GameBoard {
             this.selectedCards = [];
             this.moves++;
             this.renderNumberOfMoves();
-
-            if (this.matchedCards === (this.cards.length)/2) {
-                this.timer.stop();
-            }
         }
+
+        if (this.isMatchedAllCards()) {
+            this.timer.stop();
+        }
+
+    }
+
+    isMatchedAllCards() {
+        return this.matchedCards === (this.cards.length)/2;
     }
 
     renderCardsDelayed(cards) {
