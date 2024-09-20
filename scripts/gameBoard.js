@@ -49,12 +49,12 @@ export class GameBoard {
             this.selectedCards = [];
             this.moves++;
             this.renderNumberOfMoves();
-        }
 
-        if (this.isMatchedAllCards()) {
-            this.timer.stop();
+            if (this.isMatchedAllCards()) {
+                this.timer.pause();
+                this.renderModal();
+            }
         }
-
     }
 
     isMatchedAllCards() {
@@ -78,5 +78,16 @@ export class GameBoard {
         this.timer.addEventListener('secondsUpdated', () => {
             $('.timer').html(`Timer: ${this.timer.getTimeValues().toString()}`);
         });
+    }
+
+    renderModal() {
+        const modal = document.querySelector('.modal-container');
+        modal.classList.remove('hidden');
+
+        const moveCount = document.querySelector('.move-count');
+        moveCount.innerHTML = `${this.moves}`;
+
+        const timerCount = document.querySelector('.timer-count');
+        timerCount.innerHTML = `${this.timer.getTimeValues().toString()}`;
     }
 }
