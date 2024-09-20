@@ -54,6 +54,7 @@ export class GameBoard {
                 this.timer.pause();
                 this.renderModal();
             }
+
         }
     }
 
