@@ -52,7 +52,9 @@ export class GameBoard {
 
             if (this.isMatchedAllCards()) {
                 this.timer.pause();
-                this.renderModal();
+                setTimeout(() => {
+                    this.renderModal();
+                }, 1000);
             }
 
         }
