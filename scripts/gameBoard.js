@@ -1,5 +1,6 @@
 export class GameBoard {
-    constructor(cards) {
+    constructor(gameScenes, cards) {
+        this.gameScenes = gameScenes;
         this.cards = cards;
         this.shuffleCards();
 
@@ -12,6 +13,11 @@ export class GameBoard {
         this.timer = new Timer();
         this.timer.start();
         this.renderTimer();
+    }
+
+    startGame() {
+        this.gameScenes.switchScene('game');
+        this.render();
     }
 
     render() {
