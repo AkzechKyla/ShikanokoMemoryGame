@@ -85,7 +85,7 @@ export class GameBoard {
 
     renderTimer() {
         this.timer.addEventListener('secondsUpdated', () => {
-            $('.timer').html(`Timer: ${this.timer.getTimeValues().toString()}`);
+            document.querySelector('.timer').innerHTML = (`Timer: ${this.timer.getTimeValues().toString()}`);
         });
     }
 
