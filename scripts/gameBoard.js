@@ -59,6 +59,7 @@ export class GameBoard {
             if (this.isMatchedAllCards()) {
                 this.timer.pause();
                 setTimeout(() => {
+                    this.showModal();
                     this.renderModal();
                 }, 500);
             }
@@ -89,11 +90,13 @@ export class GameBoard {
         });
     }
 
-    renderModal() {
+    showModal() {
         const modal = document.querySelector('.modal-container');
         modal.classList.remove('opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100');
+    }
 
+    renderModal() {
         const moveCount = document.querySelector('.move-count');
         moveCount.innerHTML = `${this.moves}`;
 
