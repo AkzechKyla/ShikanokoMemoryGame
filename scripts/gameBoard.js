@@ -60,7 +60,7 @@ export class GameBoard {
                 this.timer.pause();
                 setTimeout(() => {
                     this.renderModal();
-                }, 1000);
+                }, 500);
             }
 
         }
@@ -91,7 +91,8 @@ export class GameBoard {
 
     renderModal() {
         const modal = document.querySelector('.modal-container');
-        modal.classList.remove('hidden');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
 
         const moveCount = document.querySelector('.move-count');
         moveCount.innerHTML = `${this.moves}`;
