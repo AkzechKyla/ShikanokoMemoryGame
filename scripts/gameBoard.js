@@ -59,7 +59,7 @@ export class GameBoard {
             if (this.isMatchedAllCards()) {
                 this.timer.pause();
                 setTimeout(() => {
-                    this.showModal();
+                    this.endGame();
                     this.renderModal();
                 }, 500);
             }
@@ -88,12 +88,6 @@ export class GameBoard {
         this.timer.addEventListener('secondsUpdated', () => {
             document.querySelector('.timer').innerHTML = (`Timer: ${this.timer.getTimeValues().toString()}`);
         });
-    }
-
-    showModal() {
-        const modal = document.querySelector('.modal-container');
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        modal.classList.add('opacity-100');
     }
 
     renderModal() {

@@ -26,13 +26,13 @@
             </div>
         </div>
 
-        <div class="game game-board-container absolute">
+        <div class="game game-board-container flex flex-col absolute opacity-0 pointer-events-none transition-opacity ease-in-out duration-300">
             <div class="moves text-4xl"></div>
             <div class="timer text-4xl">Timer: 00:00:00</div>
             <div class="game-board grid gap-1.5"></div>
         </div>
 
-        <div class="modal-container relative z-10 opacity-0 pointer-events-none transition-opacity ease-in-out duration-300">
+        <div class="end-game relative z-10 opacity-0 pointer-events-none transition-opacity ease-in-out duration-300">
           <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
           <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
