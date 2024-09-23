@@ -23,7 +23,7 @@ export class GameBoard {
     }
 
     endGame() {
-        this.modals.switchModal('end-game');
+        this.modals.showModal('end-game');
         this.renderModal();
     }
 
