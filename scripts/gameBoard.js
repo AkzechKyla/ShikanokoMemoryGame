@@ -24,6 +24,12 @@ export class GameBoard {
 
     restartGame() {
         this.modals.hideModal('end-game');
+
+        this.moves = 0;
+        this.renderNumberOfMoves();
+
+        this.timer.stop();
+        this.timer.start();
     }
 
     endGame() {
