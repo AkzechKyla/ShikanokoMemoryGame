@@ -11,15 +11,19 @@ export class GameBoard {
         this.selectedCards = [];
         this.moves = 0;
         this.renderNumberOfMoves();
+    }
+
+    startGame() {
+        this.gameScenes.switchScene('game');
+        this.render();
 
         this.timer = new Timer();
         this.timer.start();
         this.renderTimer();
     }
 
-    startGame() {
-        this.gameScenes.switchScene('game');
-        this.render();
+    restartGame() {
+        this.modals.hideModal('end-game');
     }
 
     endGame() {
