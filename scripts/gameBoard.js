@@ -1,6 +1,8 @@
 export class GameBoard {
-    constructor(gameScenes, cards) {
+    constructor(gameScenes, modals, cards) {
         this.gameScenes = gameScenes;
+        this.modals = modals;
+
         this.cards = cards;
         this.shuffleCards();
 
@@ -18,6 +20,11 @@ export class GameBoard {
     startGame() {
         this.gameScenes.switchScene('game');
         this.render();
+    }
+
+    endGame() {
+        this.modals.switchModal('end-game');
+        this.renderModal();
     }
 
     render() {
