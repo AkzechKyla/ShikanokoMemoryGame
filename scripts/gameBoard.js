@@ -30,6 +30,13 @@ export class GameBoard {
 
         this.timer.stop();
         this.timer.start();
+
+        for (const card of this.cards) {
+            card.matchedWith = null;
+            card.flip();
+        }
+
+        this.render();
     }
 
     endGame() {
