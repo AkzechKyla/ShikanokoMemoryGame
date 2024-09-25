@@ -11,6 +11,11 @@ export class GameBoard {
         this.selectedCards = [];
         this.moves = 0;
         this.renderNumberOfMoves();
+
+        for (const card of this.cards) {
+            const cardElement = card.render();
+            cardElement.addEventListener('click', () => this.selectCard(card));
+        }
     }
 
     startGame() {
@@ -36,6 +41,7 @@ export class GameBoard {
             card.flip();
         }
 
+        this.matchedCards = 0;
         this.render();
     }
 
@@ -49,7 +55,6 @@ export class GameBoard {
 
         for (const card of this.cards) {
             const cardElement = card.render();
-            cardElement.addEventListener('click', () => this.selectCard(card));
             board.appendChild(cardElement);
         }
     }
