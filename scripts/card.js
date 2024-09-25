@@ -38,12 +38,12 @@ export class Card {
         if (this.isFlipped) {
             html = `<img
                 src="${this.imageURL}"
-                class="object-cover"
+                class="object-cover cursor-pointer"
             />`;
         } else {
             html = `<img
                 src="${this.cardBack}"
-                class="object-cover"
+                class="object-cover cursor-pointer"
             />`;
         }
 
