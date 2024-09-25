@@ -10,6 +10,8 @@ async function main() {
     const cards = cardImages.flatMap((card) => [card, card]).map((card) => new Card(card));
     const gameBoard = new GameBoard(gameScenes, endGameModal, cards);
 
+    window.gameScenes = gameScenes;
+    window.endGameModal = endGameModal;
     window.gameBoard = gameBoard;
 }
 

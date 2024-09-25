@@ -51,7 +51,13 @@
                   </div>
                   <img class="my-3" src="https://media1.tenor.com/m/g7ntgWBQrBEAAAAC/shikanoko-shikanoko-nokonoko-koshitan.gif">
                   <div class="text-4xl text-[#8079D1]" onclick="gameBoard.restartGame()">PLAY AGAIN</div>
-                  <div class="text-4xl text-[#F76079]">MAIN MENU</div>
+                  <div class="text-4xl text-[#F76079]"
+                    onclick="
+                      gameScenes.switchScene('main-menu');
+                      endGameModal.hideModal();
+                    ">
+                      MAIN MENU
+                  </div>
                 </div>
               </div>
             </div>
