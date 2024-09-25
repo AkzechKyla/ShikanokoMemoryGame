@@ -28,13 +28,13 @@ export class GameBoard {
     }
 
     restartGame() {
+        this.timer.stop();
+        this.timer.start();
+
         this.modals.hideModal('end-game');
 
         this.moves = 0;
         this.renderNumberOfMoves();
-
-        this.timer.stop();
-        this.timer.start();
 
         for (const card of this.cards) {
             card.matchedWith = null;
