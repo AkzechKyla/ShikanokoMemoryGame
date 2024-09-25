@@ -672,6 +672,14 @@ html {
   top: 40%;
 }
 
+.left-\[50\%\] {
+  left: 50%;
+}
+
+.left-\[60\%\] {
+  left: 60%;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -872,6 +880,22 @@ html {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-60 {
+  width: 15rem;
+}
+
+.w-52 {
+  width: 13rem;
+}
+
+.w-44 {
+  width: 11rem;
 }
 
 .max-w-lg {
