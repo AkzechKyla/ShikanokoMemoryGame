@@ -31,6 +31,9 @@ export class GameBoard {
     }
 
     restartGame() {
+        this.audio.stop();
+        this.audio.play('Start');
+
         this.timer.stop();
         this.timer.start();
 
