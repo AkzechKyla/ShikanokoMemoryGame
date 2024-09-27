@@ -3,8 +3,23 @@ export class AudioPlayer {
         this.audio = document.querySelector('.music-player');
     }
 
-    play() {
-        this.audio.src = 'assets/audio/ShikairoDays.mp3';
+    play(song) {
+        let src;
+
+        switch(song) {
+            case 'Start':
+                src = 'assets/audio/ShikairoDays.mp3';
+                break;
+            case 'End':
+                src = 'assets/audio/Shika-senbei-no-Uta.mp3';
+                break;
+        }
+
+        this.audio.src = src;
         this.audio.play();
+    }
+
+    stop() {
+        this.audio.pause();
     }
 }

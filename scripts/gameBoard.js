@@ -24,7 +24,7 @@ export class GameBoard {
         this.gameScenes.switchScene('game');
         this.render();
 
-        this.audio.play();
+        this.audio.play('Start');
         this.timer = new Timer();
         this.timer.start();
         this.renderTimer();
@@ -51,6 +51,8 @@ export class GameBoard {
     endGame() {
         this.modals.showModal('end-game');
         this.renderModal();
+        this.audio.stop();
+        this.audio.play('End');
     }
 
     render() {
