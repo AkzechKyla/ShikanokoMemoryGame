@@ -1,5 +1,5 @@
 export class GameBoard {
-    constructor(gameScenes, modals, cards) {
+    constructor(gameScenes, modals, cards, audioPlayer) {
         this.gameScenes = gameScenes;
         this.modals = modals;
 
@@ -16,12 +16,15 @@ export class GameBoard {
             const cardElement = card.render();
             cardElement.addEventListener('click', () => this.selectCard(card));
         }
+
+        this.audio = audioPlayer;
     }
 
     startGame() {
         this.gameScenes.switchScene('game');
         this.render();
 
+        this.audio.play();
         this.timer = new Timer();
         this.timer.start();
         this.renderTimer();
