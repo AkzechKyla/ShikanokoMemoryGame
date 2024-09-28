@@ -10,7 +10,8 @@ async function main() {
     const endGameModal = new Modal(['end-game']);
     const cards = cardImages.flatMap((card) => [card, card]).map((card) => new Card(card));
     const backgroundMusic = new Audio('background-music');
-    const gameBoard = new GameBoard(gameScenes, endGameModal, cards, backgroundMusic);
+    const soundEffect = new Audio('sound-effect');
+    const gameBoard = new GameBoard(gameScenes, endGameModal, cards, backgroundMusic, soundEffect);
 
     window.gameScenes = gameScenes;
     window.endGameModal = endGameModal;

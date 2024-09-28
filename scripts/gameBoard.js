@@ -1,5 +1,5 @@
 export class GameBoard {
-    constructor(gameScenes, modals, cards, backgroundMusic) {
+    constructor(gameScenes, modals, cards, backgroundMusic, soundEffect) {
         this.gameScenes = gameScenes;
         this.modals = modals;
 
@@ -18,6 +18,7 @@ export class GameBoard {
         }
 
         this.backgroundMusic = backgroundMusic;
+        this.soundEffect = soundEffect;
     }
 
     startGame() {
@@ -83,6 +84,7 @@ export class GameBoard {
                 card1.match(card2);
                 card2.match(card1);
                 this.matchedCards++;
+                this.soundEffect.play('Match');
             } else {
                 card1.flip();
                 card2.flip();
