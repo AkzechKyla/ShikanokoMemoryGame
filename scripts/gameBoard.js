@@ -1,5 +1,5 @@
 export class GameBoard {
-    constructor(gameScenes, modals, cards, audioPlayer) {
+    constructor(gameScenes, modals, cards, backgroundMusic) {
         this.gameScenes = gameScenes;
         this.modals = modals;
 
@@ -17,22 +17,22 @@ export class GameBoard {
             cardElement.addEventListener('click', () => this.selectCard(card));
         }
 
-        this.audio = audioPlayer;
+        this.backgroundMusic = backgroundMusic;
     }
 
     startGame() {
         this.gameScenes.switchScene('game');
         this.render();
 
-        this.audio.play('Start');
+        this.backgroundMusic.play('Start');
         this.timer = new Timer();
         this.timer.start();
         this.renderTimer();
     }
 
     restartGame() {
-        this.audio.stop();
-        this.audio.play('Start');
+        this.backgroundMusic.stop();
+        this.backgroundMusic.play('Start');
 
         this.timer.stop();
         this.timer.start();
@@ -54,8 +54,8 @@ export class GameBoard {
     endGame() {
         this.modals.showModal('end-game');
         this.renderModal();
-        this.audio.stop();
-        this.audio.play('End');
+        this.backgroundMusic.stop();
+        this.backgroundMusic.play('End');
     }
 
     render() {
