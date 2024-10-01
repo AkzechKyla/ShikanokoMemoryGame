@@ -122,6 +122,7 @@ export class GameBoard {
     }
 
     renderTimer() {
+        document.querySelector('.timer').innerHTML = `Timer: 00:00:00`;
         this.timer.addEventListener('secondsUpdated', () => {
             document.querySelector('.timer').innerHTML = (`Timer: ${this.timer.getTimeValues().toString()}`);
         });
