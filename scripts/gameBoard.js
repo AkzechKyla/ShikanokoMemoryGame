@@ -5,12 +5,7 @@ export class GameBoard {
 
         this.cards = cards;
         this.shuffleCards();
-
-        this.matchedCards = 0;
-
         this.selectedCards = [];
-        this.moves = 0;
-        this.renderNumberOfMoves();
 
         for (const card of this.cards) {
             const cardElement = card.render();
@@ -22,32 +17,26 @@ export class GameBoard {
     }
 
     startGame() {
+        // switch to Game Scene
         this.gameScenes.switchScene('game');
         this.render();
 
+        // play background music for Start
         this.backgroundMusic.play('Start');
+
+        // start timer
         this.timer = new Timer();
         this.timer.start();
         this.renderTimer();
-    }
 
-    restartGame() {
-        this.backgroundMusic.stop();
-        this.backgroundMusic.play('Start');
-
-        this.timer.stop();
-        this.timer.start();
-
+        // hide End Game modal if there is one
         this.modals.hideModal('end-game');
 
+        // set moves to 0
         this.moves = 0;
         this.renderNumberOfMoves();
 
-        for (const card of this.cards) {
-            card.matchedWith = null;
-            card.flip();
-        }
-
+        // set matched cards to 0
         this.matchedCards = 0;
         this.render();
     }
