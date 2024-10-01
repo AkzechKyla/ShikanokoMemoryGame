@@ -57,6 +57,8 @@ export class GameBoard {
         this.renderModal();
         this.backgroundMusic.stop();
         this.backgroundMusic.play('End');
+
+        this.flipCards();
     }
 
     render() {
@@ -65,6 +67,13 @@ export class GameBoard {
         for (const card of this.cards) {
             const cardElement = card.render();
             board.appendChild(cardElement);
+        }
+    }
+
+    flipCards() {
+        for (const card of this.cards) {
+            card.matchedWith = null;
+            card.flip();
         }
     }
 
