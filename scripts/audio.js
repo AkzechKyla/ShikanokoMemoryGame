@@ -1,6 +1,7 @@
 export class Audio {
     constructor(player) {
         this.audio = document.querySelector(`.${player}`);
+        this.isAudioOn = true;
     }
 
     play(song) {
@@ -22,7 +23,10 @@ export class Audio {
         }
 
         this.audio.src = src;
-        this.audio.play();
+
+        if (this.isAudioOn) {
+            this.audio.play();
+        }
     }
 
     stop() {
